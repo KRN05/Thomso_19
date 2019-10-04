@@ -9,10 +9,11 @@ import com.example.laxiweldemo.eventsDays.Day2
 import com.example.laxiweldemo.eventsDays.Day3
 import com.example.laxiweldemo.eventsDays.OnGoing
 
-    /*
-        this will take fragment manager as a parameter
-    */
-class EventDayStatusTabAdapter(efm: FragmentManager?, private var activePosition: Int?) : FragmentPagerAdapter(efm) {
+/*
+    this will take fragment manager as a parameter
+*/
+class EventDayStatusTabAdapter(efm: FragmentManager?, private var activePosition: Int?) :
+    FragmentPagerAdapter(efm) {
 
     private val TAG = javaClass.name
 
@@ -23,6 +24,9 @@ class EventDayStatusTabAdapter(efm: FragmentManager?, private var activePosition
 
 
     private val TAB_COUNT = 4
+
+    private val tabTitles = arrayOf("ONGOING", "DAY 1", "DAY 2", "DAY 3")
+
 
     override fun getItem(position: Int): Fragment {
         when (position) {
@@ -38,7 +42,7 @@ class EventDayStatusTabAdapter(efm: FragmentManager?, private var activePosition
             3 -> {
                 return Day3.newInstance()
             }
-            else->{
+            else -> {
                 return OnGoing.newInstance()
             }
         }
@@ -68,7 +72,7 @@ class EventDayStatusTabAdapter(efm: FragmentManager?, private var activePosition
                     day3 = Day3()
                 }
             }
-            else->{
+            else -> {
                 if (fragment is OnGoing) {
                     onGoing = OnGoing()
                 }
@@ -82,4 +86,8 @@ class EventDayStatusTabAdapter(efm: FragmentManager?, private var activePosition
         return TAB_COUNT
     }
 
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return tabTitles[position]
+    }
 }

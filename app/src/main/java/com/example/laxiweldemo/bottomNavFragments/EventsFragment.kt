@@ -5,15 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.laxiweldemo.R
 import com.example.laxiweldemo.adapters.EventDayStatusTabAdapter
 import kotlinx.android.synthetic.main.fragment_events.*
 
+
 class EventsFragment : Fragment(), ViewPager.OnPageChangeListener {
 
     private var eventDayStatusTabAdapter: EventDayStatusTabAdapter? = null
+    protected lateinit var mActivity: AppCompatActivity
 
 
     companion object {
@@ -24,6 +27,8 @@ class EventsFragment : Fragment(), ViewPager.OnPageChangeListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_events, container, false)
+
+        mActivity = activity as AppCompatActivity
 
         return view
     }
@@ -46,23 +51,22 @@ class EventsFragment : Fragment(), ViewPager.OnPageChangeListener {
             "day1" -> 1
             "day2" -> 2
             "day"  -> 3
-             else-> 0
+             else->   0
         }
 
         eventDayStatusTabAdapter = EventDayStatusTabAdapter(
             childFragmentManager, activeTabPosition
         )
         eventsViewPager.adapter = eventDayStatusTabAdapter
-        eventsTabLayout.setupWithViewPager(eventsViewPager)
+
+        //this is must for viewpager to work and enabling this will take out NAMES that you declared in xml
+       eventsTabLayout.setupWithViewPager(eventsViewPager)
 
 
         eventsViewPager.addOnPageChangeListener(this)
         eventsTabLayout.getTabAt(activeTabPosition)?.select()
+        
     }
-
-
-
-
 
     override fun onPageScrollStateChanged(state: Int) {
         //Do nothing
