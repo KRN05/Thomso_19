@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/MontserratText</item>
+
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="MontserratText" parent="android:Widget.TextView">
+        <item name="android:fontFamily">Montserrat</item>
+    </style>
+
+
+    <!-- this has removed the transition effect for me, but its main use can be different i will see it later-->
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget" tools:override="true">
+        <item name="tabIndicatorHeight">5dp</item>
+        <!--     below two attributes corresponds to that underline rectangle for tabs
+                    <item name="tabIndicatorColor">#ff00ff</item>-->
+<!--        <item name="tabIndicatorHeight">2dp</item>-->
+    </style>
+
+</resources>
