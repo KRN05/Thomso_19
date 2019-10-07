@@ -20,12 +20,30 @@
     <string name="workshops">WORKSHOPS</string>
     <string name="carnival">CARNIVAL</string>
     <string name="events">EVENTS</string>
-    <string name="make_payment">Make Payment</string>
-    <string name="map">Map</string>
-    <string name="food_n_beverages">Food n Beverages</string>
-    <string name="team">Team</string>
-    <string name="developer">Developer</string>
-    <string name="emergency">Emergency</string>
-    <string name="sponsors">Sponsors</string>
+    <string name="make_payment">MAKE PAYMENT</string>
+    <string name="map">MAP</string>
+    <string name="food_n_beverages">FOOD N BEVERAGES</string>
+    <string name="team">OUR TEAM</string>
+    <string name="developer">DEVELOPER</string>
+    <string name="emergency">EMERGENCY</string>
+    <string name="sponsors">SPONSORS</string>
+    <string name="todo">TODO</string>
+    <string name="pay_now">PAY NOW</string>
 
+
+    <string-array name="eventsDayName">
+        <item>ONGOING</item>
+        <item>DAY 1</item>
+        <item>DAY 2</item>
+        <item>DAY 3</item>
+    </string-array>
+
+
+<!--    <string-array name="dashboardTabsNames">-->
+<!--        <item>CARNIVAL</item>-->
+<!--        <item>EVENTS</item>-->
+<!--        <item>HOME</item>-->
+<!--        <item>WORKSHOPS</item>-->
+<!--        <item>SILENT DJ</item>-->
+<!--    </string-array>-->
 </resources>

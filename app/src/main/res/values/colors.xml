@@ -3,7 +3,12 @@
     <color name="colorPrimary">#873FD2</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name ="eventsBackgroundColor">#4D0F44</color>
-    <color name ="tabColor">#330A2D</color>
+    <color name ="eventsBackgroundColor">#390E41</color>
+    <color name ="tabColor">#2B0B31</color>
+    <color name="white">#FFFFFF</color>
     <color name ="tabSelectColor">#E20EB6</color>
+    <color name ="side_nav">#000000</color>
+    <color name="black">#000000</color>
+
+
 </resources>

@@ -3,7 +3,9 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+            android:id="@+id/menu_top"
+            android:checkableBehavior="single">
         <item
                 android:id="@+id/nav_makePayment"
                 android:title="@string/make_payment"/>
@@ -24,26 +26,16 @@
 
 
 
-<!--    <item android:title="Communicate">-->
-<!--        <menu>-->
-<!--            <item-->
-<!--                    android:id="@+id/nav_team"-->
-<!--                    android:title="@string/share"/>-->
-<!--            <item-->
-<!--                    android:id="@+id/nav_developer"-->
-<!--                    android:title="@string/feedback"/>-->
-<!--        </menu>-->
-<!--    </item>-->
+    <group
+            android:id="@+id/menu_bottom"
+            android:checkableBehavior="none">
 
-    <group android:checkableBehavior="single">
-        <menu>
             <item
                     android:id="@+id/nav_team"
                     android:title="@string/team"/>
             <item
                     android:id="@+id/nav_developer"
                     android:title="@string/developer"/>
-        </menu>
 
     </group>
 

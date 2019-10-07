@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.example.laxiweldemo.DashboardActivity
 import com.example.laxiweldemo.R
 import com.example.laxiweldemo.adapters.EventDayStatusTabAdapter
 import kotlinx.android.synthetic.main.fragment_events.*
@@ -28,7 +29,7 @@ class EventsFragment : Fragment(), ViewPager.OnPageChangeListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_events, container, false)
 
-        mActivity = activity as AppCompatActivity
+        mActivity = activity as DashboardActivity
 
         return view
     }
@@ -60,12 +61,27 @@ class EventsFragment : Fragment(), ViewPager.OnPageChangeListener {
         eventsViewPager.adapter = eventDayStatusTabAdapter
 
         //this is must for viewpager to work and enabling this will take out NAMES that you declared in xml
-       eventsTabLayout.setupWithViewPager(eventsViewPager)
+        eventsTabLayout.setupWithViewPager(eventsViewPager)
+//        eventsTabLayout.removeAllTabs()
 
+//        eventDayStatusTabAdapter?.let {
+//            for (i in 0 until it.count) {
+//                val tab = eventsTabLayout.newTab()
+//                val tabName =
+//                    mActivity.layoutInflater.inflate(R.layout.events_tab, eventsTabLayout, false) as TextView
+//                tabName.text = resources.getStringArray(R.array.eventsDayName)[i]
+//                tab.customView = tabName
+//                eventsTabLayout.addTab(tab, i, 0 == i)
+//                tabName.isSelected = 4 == i
+//                if (0 == i) {
+//                    tab.select()
+//                }
+//            }
+//        }
 
         eventsViewPager.addOnPageChangeListener(this)
         eventsTabLayout.getTabAt(activeTabPosition)?.select()
-        
+
     }
 
     override fun onPageScrollStateChanged(state: Int) {

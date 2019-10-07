@@ -12,28 +12,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabBackground="@drawable/tab_color_selector"
-            app:tabTextColor="@android:color/background_light">
+            app:tabGravity="fill"
+            app:tabPaddingTop="76dp"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@android:color/background_light" />
 
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ONGOING" />
+<!--        app:tabIndicatorColor="@color/whiteText"-->
+<!--        app:tabIndicatorHeight="3dp"-->
 
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DAY 1" />
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="ONGOING" />-->
 
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DAY 2" />
 
-        <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DAY 3" />
-    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
             android:id="@+id/eventsViewPager"

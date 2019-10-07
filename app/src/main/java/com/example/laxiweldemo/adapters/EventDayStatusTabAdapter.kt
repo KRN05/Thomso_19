@@ -27,7 +27,6 @@ class EventDayStatusTabAdapter(efm: FragmentManager?, private var activePosition
 
     private val tabTitles = arrayOf("ONGOING", "DAY 1", "DAY 2", "DAY 3")
 
-
     override fun getItem(position: Int): Fragment {
         when (position) {
             0 -> {
