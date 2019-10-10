@@ -17,6 +17,6 @@ class PronitesViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     }
 
     fun bind(mPronites: PronitesDTO) {
-        pronitesImage?.imageAlpha = mPronites.poster
+        pronitesImage?.setImageResource(mPronites.poster)
     }
 }

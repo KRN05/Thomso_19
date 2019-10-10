@@ -20,15 +20,15 @@ class HomeFragment: Fragment(){
 
 
     var pronitesList = arrayListOf(
-        PronitesDTO(R.drawable.ic_ai),
-        PronitesDTO(R.drawable.ic_ai),
-        PronitesDTO(R.drawable.ic_ai)
+        PronitesDTO(R.drawable.pronites_baba),
+        PronitesDTO(R.drawable.pronites_baba),
+        PronitesDTO(R.drawable.pronites_baba)
     )
 
     var majorAttractionList = arrayListOf(
-        MajorAtrractionDTO(R.drawable.ic_ai),
-        MajorAtrractionDTO(R.drawable.ic_ai),
-        MajorAtrractionDTO(R.drawable.ic_ai)
+        MajorAtrractionDTO(R.drawable.major_att),
+        MajorAtrractionDTO(R.drawable.major_att),
+        MajorAtrractionDTO(R.drawable.major_att)
     )
 
 
@@ -39,7 +39,7 @@ class HomeFragment: Fragment(){
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.fragment_home, container, false)
+        inflater.inflate(R.layout.test, container, false)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,6 +54,8 @@ class HomeFragment: Fragment(){
             LinearLayoutManager.HORIZONTAL,
             false
         )
+
+        
 
             // set the custom adapter to the RecyclerView
         pronites_recyclerview.adapter = HomeAdapterPronites(pronitesList)

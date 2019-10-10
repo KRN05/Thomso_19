@@ -89,8 +89,8 @@ class DashboardTabAdapter (fm: FragmentManager?, private val bundle: Bundle?) : 
         return TAB_COUNT
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        return tabTitles[position]
-    }
+//    override fun getPageTitle(position: Int): CharSequence? {
+//        return tabTitles[position]
+//    }
 
 }

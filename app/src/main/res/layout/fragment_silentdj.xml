@@ -2,24 +2,30 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="306dp"
-            android:text="Hi this is Silent Dj" />
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background">
 
     <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="76dp"
-            android:layout_height="107dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="109dp"
-            android:layout_marginTop="124dp"
-            app:srcCompat="@drawable/ic_paper_plane" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            app:srcCompat="@drawable/silent_dj_poster_2" />
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="154dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/ic_pay_now_1"
+            android:text="@string/pay_now" />
 </RelativeLayout>

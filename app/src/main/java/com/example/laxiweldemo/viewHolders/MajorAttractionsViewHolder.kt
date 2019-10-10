@@ -17,6 +17,6 @@ class MajorAttractionsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     }
 
     fun bind(mMajorA: MajorAtrractionDTO) {
-        majorAImage?.imageAlpha = mMajorA.poster
+        majorAImage?.setImageResource(mMajorA.poster)
     }
 }

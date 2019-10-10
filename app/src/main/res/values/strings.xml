@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LaxiwelDemo</string>
+    <string name="app_name">Thomso\'19</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -37,13 +37,22 @@
         <item>DAY 2</item>
         <item>DAY 3</item>
     </string-array>
+    <string name="title_activity_side_navigation">SideNavigation</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="textview">TextView</string>
 
 
-<!--    <string-array name="dashboardTabsNames">-->
-<!--        <item>CARNIVAL</item>-->
-<!--        <item>EVENTS</item>-->
-<!--        <item>HOME</item>-->
-<!--        <item>WORKSHOPS</item>-->
-<!--        <item>SILENT DJ</item>-->
-<!--    </string-array>-->
+    <!--    <string-array name="dashboardTabsNames">-->
+    <!--        <item>CARNIVAL</item>-->
+    <!--        <item>EVENTS</item>-->
+    <!--        <item>HOME</item>-->
+    <!--        <item>WORKSHOPS</item>-->
+    <!--        <item>SILENT DJ</item>-->
+    <!--    </string-array>-->
 </resources>

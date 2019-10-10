@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -41,16 +40,16 @@ class EventsFragment : Fragment(), ViewPager.OnPageChangeListener {
     }
 
     private fun doInitialSetup() {
-        setUpLoanStatusTabAdapter()
+        setUpEventsTabAdapter()
     }
 
 
-    private fun setUpLoanStatusTabAdapter() {
+    private fun setUpEventsTabAdapter() {
         val subTab = arguments?.getString("extraSubSection")
         val activeTabPosition = when (subTab) {
             "onGoing" -> 0
-            "day1" -> 1
-            "day2" -> 2
+            "events_day1" -> 1
+            "events_day2" -> 2
             "day"  -> 3
              else->   0
         }
@@ -58,29 +57,13 @@ class EventsFragment : Fragment(), ViewPager.OnPageChangeListener {
         eventDayStatusTabAdapter = EventDayStatusTabAdapter(
             childFragmentManager, activeTabPosition
         )
-        eventsViewPager.adapter = eventDayStatusTabAdapter
+        event_viewpager_2.adapter = eventDayStatusTabAdapter
 
         //this is must for viewpager to work and enabling this will take out NAMES that you declared in xml
-        eventsTabLayout.setupWithViewPager(eventsViewPager)
-//        eventsTabLayout.removeAllTabs()
+        events_tablayout_2.setupWithViewPager(event_viewpager_2)
 
-//        eventDayStatusTabAdapter?.let {
-//            for (i in 0 until it.count) {
-//                val tab = eventsTabLayout.newTab()
-//                val tabName =
-//                    mActivity.layoutInflater.inflate(R.layout.events_tab, eventsTabLayout, false) as TextView
-//                tabName.text = resources.getStringArray(R.array.eventsDayName)[i]
-//                tab.customView = tabName
-//                eventsTabLayout.addTab(tab, i, 0 == i)
-//                tabName.isSelected = 4 == i
-//                if (0 == i) {
-//                    tab.select()
-//                }
-//            }
-//        }
-
-        eventsViewPager.addOnPageChangeListener(this)
-        eventsTabLayout.getTabAt(activeTabPosition)?.select()
+        event_viewpager_2.addOnPageChangeListener(this)
+        events_tablayout_2.getTabAt(activeTabPosition)?.select()
 
     }
 
