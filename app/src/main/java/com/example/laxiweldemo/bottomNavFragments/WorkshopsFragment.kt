@@ -17,10 +17,8 @@ import kotlinx.android.synthetic.main.fragment_workshops.view.workshops_recycler
 class WorkshopsFragment : Fragment() {
 
     var workshopsList = arrayListOf(
-        WorkshopsDTO(R.drawable.ic_ai, "ARTIFICIAL " +
-                "INTELLIGENCE", R.drawable.ic_pay_now),
-        WorkshopsDTO(R.drawable.ic_iot, "INTERNET OF " +
-                "THINGS",R.drawable.ic_pay_now),
+        WorkshopsDTO(R.drawable.ic_ai, "ARTIFICIAL INTELLIGENCE", R.drawable.ic_pay_now),
+        WorkshopsDTO(R.drawable.ic_iot, "INTERNET OF THINGS",R.drawable.ic_pay_now),
         WorkshopsDTO(R.drawable.ic_origami, "ORIGAMI", R.drawable.ic_free_now),
         WorkshopsDTO(R.drawable.ic_fitness, "FITNESS", R.drawable.ic_free_now),
         WorkshopsDTO(R.drawable.ic_pg, "PHOTOGRAPHY", R.drawable.ic_free_now)
@@ -46,8 +44,7 @@ class WorkshopsFragment : Fragment() {
             // set a LinearLayoutManager to handle Android RecyclerView behavior
             layoutManager = GridLayoutManager(activity, 2)
             workshops_recycler_view.
-            // set the custom adapter to the RecyclerView
-            adapter = WorkshopsAdapter(workshopsList)
+            adapter = WorkshopsAdapter(workshopsList) // set the custom adapter to the RecyclerView
         }
     }
 }

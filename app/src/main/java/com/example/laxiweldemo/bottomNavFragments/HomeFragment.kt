@@ -20,9 +20,9 @@ class HomeFragment: Fragment(){
 
 
     var pronitesList = arrayListOf(
-        PronitesDTO(R.drawable.pronites_baba),
-        PronitesDTO(R.drawable.pronites_baba),
-        PronitesDTO(R.drawable.pronites_baba)
+        PronitesDTO(R.drawable.tiger),
+        PronitesDTO(R.drawable.tiger),
+        PronitesDTO(R.drawable.tiger)
     )
 
     var majorAttractionList = arrayListOf(
@@ -38,13 +38,19 @@ class HomeFragment: Fragment(){
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.test, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view= inflater.inflate(R.layout.fragment_home, container, false)
+
+        return view
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+//        pronites_recyclerview.isNestedScrollingEnabled
+//        majorAttractions_recyclerview.isNestedScrollingEnabled
         /*
         pronites recyclerview
          */

@@ -15,8 +15,8 @@ class FaqViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 
 
     init {
-        mFaqs=itemView.findViewById<TextView>(R.id.faqtitle)
-        mFaqsDescription?.findViewById<TextView>(R.id.description)
+        mFaqs=itemView.findViewById<TextView>(R.id.faq_title)
+        mFaqsDescription?.findViewById<TextView>(R.id.faq_description)
     }
 
     fun bind(faqs: FaqDTO){

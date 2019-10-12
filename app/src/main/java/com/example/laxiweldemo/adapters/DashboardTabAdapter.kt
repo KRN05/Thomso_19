@@ -12,7 +12,7 @@ class DashboardTabAdapter (fm: FragmentManager?, private val bundle: Bundle?) : 
 
     private val TAG = javaClass.name
 
-    private var carnivalFragment: CarnivalFragment? = null
+    private var carnivalFragment: CarnivalAdapter? = null
     private var eventsFragment: EventsFragment? = null
     private var homeFragment: HomeFragment? = null
     private var workshopsFragment: WorkshopsFragment? = null
@@ -26,7 +26,7 @@ class DashboardTabAdapter (fm: FragmentManager?, private val bundle: Bundle?) : 
     override fun getItem(position: Int): Fragment {
         when (position) {
             0 -> {
-                return CarnivalFragment.newInstance()
+                return CarnivalAdapter.newInstance()
             }
             1 -> {
                 return EventsFragment.newInstance()
@@ -51,7 +51,7 @@ class DashboardTabAdapter (fm: FragmentManager?, private val bundle: Bundle?) : 
 
         when (position) {
             0 -> {
-                if (fragment is CarnivalFragment) {
+                if (fragment is CarnivalAdapter) {
                     carnivalFragment = CarnivalFragment()
                 }
             }

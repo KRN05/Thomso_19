@@ -7,6 +7,10 @@
         android:background="@drawable/main_background">
 
 
+    <include
+        layout="@layout/toolbar"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sponsors_recycler_view"
             android:layout_width="match_parent"

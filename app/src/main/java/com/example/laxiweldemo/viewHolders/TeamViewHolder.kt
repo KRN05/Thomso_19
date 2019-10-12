@@ -30,10 +30,10 @@ class TeamViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
 
     fun bind(mEvents: TeamDTO) {
         team_photo?.setImageResource(mEvents.teamPhoto)
-        team_name?.text=mEvents.teamName
-        team_post?.text= mEvents.tealPost
-        team_email?.text=mEvents.teamEmail
-        team_number?.text=mEvents.teamNumber
+        team_name?.text=mEvents.name
+        team_post?.text= mEvents.title
+        team_email?.text=mEvents.email
+        team_number?.text=mEvents.mobilenumber
 
     }
 }

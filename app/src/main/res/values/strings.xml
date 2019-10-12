@@ -55,4 +55,18 @@
     <!--        <item>WORKSHOPS</item>-->
     <!--        <item>SILENT DJ</item>-->
     <!--    </string-array>-->
+
+    <string name="foodnBeverages">1. Every Bhawan has it\'s own canteen which runs from 2pm to 2am.\n
+    2. There are cafeterias at the gate of most of the Bhawans which run from 2am to 2pm.\n
+    3. MAC is equipped with famous food chains like CCD, Sattviko, Subway open till 12am.\n
+        4. Some Delicious food has been arranged for you in ABN ground and Student\'s Club Ground.\n
+        5. Georgia, near ECE circle is a nice choice for fast food lovers and Lovers too.\n
+        6. Nescafe eatery is there in sports ground area.\n
+    </string>
+
+
+    <string name="securityMale">Security(M)\nAnshu Singh</string>
+
+    <string name="securityFemale">Security(F)\nAnshu Singh</string>
+
 </resources>

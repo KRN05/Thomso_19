@@ -1,4 +1,9 @@
 package com.example.laxiweldemo.dtos
 
-class TeamDTO(val teamPhoto: Int, val teamName: String, val tealPost: String, val teamEmail:String, val teamNumber: String) {
-}
+class TeamDTO(
+    val teamPhoto: Int,
+    val name: String,
+    val title: String,
+    val email: String,
+    val mobilenumber: String
+)

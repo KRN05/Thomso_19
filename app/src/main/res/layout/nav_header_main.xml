@@ -2,9 +2,9 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/nav_header_height"
-        android:background="@color/side_nav"
+        android:background="@color/navHeader"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -14,17 +14,24 @@
     <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
             android:paddingStart="64dp"
-            android:paddingEnd="65.17dp"
             android:paddingTop="50dp"
+            android:paddingEnd="65.17dp"
             android:paddingBottom="20dp"
-            app:srcCompat="@drawable/ic_thomso_main"
-            android:contentDescription="@string/todo" />
+            app:srcCompat="@drawable/logo_nav_header_png" />
+
+
 
     <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_line" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
 </LinearLayout>

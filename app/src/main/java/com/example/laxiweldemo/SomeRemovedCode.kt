@@ -36,7 +36,7 @@ package com.example.laxiweldemo
 //            when (item.itemId) {
 //                R.id.navigation_carnival -> {
 //                    textMessage.setText(R.string.title_home)
-//                    val carnivaljFragment = CarnivalFragment.newInstance()
+//                    val carnivaljFragment = CarnivalAdapter.newInstance()
 //                    openFragment(carnivaljFragment)
 //                    return@OnNavigationItemSelectedListener true
 //                }
@@ -114,7 +114,7 @@ Fragment Transaction -- for fragment transaction, that allows you to use intent 
 //            }
 //            R.id.top_faqs -> {
 //
-//                val faqsFragment = FaqsFragment.newInstance()
+//                val faqsFragment = ActivityFaq.newInstance()
 //                openFragment(faqsFragment)
 //                return true
 //            }

@@ -1,5 +1,6 @@
 package com.example.laxiweldemo
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -15,17 +16,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.example.laxiweldemo.adapters.DashboardTabAdapter
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.laxiweldemo.sideNavBarFragments.FragmentTeam
-import kotlinx.android.synthetic.main.side_nav_activity.*
+import com.example.laxiweldemo.actionBarGroup.ActivityFaq
+import com.example.laxiweldemo.sideNavBarFragments.*
+import kotlinx.android.synthetic.main.dashboard_activity.*
 
 
 //NavigationView.OnNavigationItemSelectedListener
@@ -64,7 +63,7 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.side_nav_activity)
+        setContentView(R.layout.dashboard_activity)
 
         doInitialSetup()
 
@@ -85,9 +84,26 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
             R.string.navigation_drawer_close
         )
         drawerLayout.addDrawerListener(toggle)
+        toggle.setDrawerIndicatorEnabled(false);
+
+        toggle.setToolbarNavigationClickListener(object : View.OnClickListener {
+            override fun onClick(view: View) {
+                drawerLayout.openDrawer(GravityCompat.START)
+            }
+        })
+
+        toggle.setHomeAsUpIndicator(R.drawable.ic_hamberger);
         toggle.syncState()
 
+        getSupportActionBar()?.setDisplayShowTitleEnabled(false);
+
         sideNavView.setNavigationItemSelectedListener(this)
+
+        // my_child_toolbar is defined in the layout file
+       // setSupportActionBar(findViewById(R.id.my_child_toolbar))
+
+        // Get a support ActionBar corresponding to this toolbar and enable the Up button
+       // supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
 
@@ -99,6 +115,8 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
             super.onBackPressed()
         }
     }
+
+
 
 
     /*
@@ -118,20 +136,24 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
 
             }
             R.id.nav_food_n_beverages -> {
-
+                val foodnBeveragesFragment = FragmentFoodnBeverages.newInstance()
+                openFragment(foodnBeveragesFragment)
             }
             R.id.nav_team -> {
                 val teamFragment = FragmentTeam.newInstance()
                 openFragment(teamFragment)
             }
             R.id.nav_developer -> {
-
+                val developerFragment = FragmentDeveloper.newInstance()
+                openFragment(developerFragment)
             }
             R.id.nav_sponsors -> {
-
+                val sponsorsFragment = FragmentSponsors.newInstance()
+                openFragment(sponsorsFragment)
             }
             R.id.nav_emergency -> {
-
+                val EmergencyFragment = FragmentEmergency.newInstance()
+                openFragment(EmergencyFragment)
             }
         }
         val drawerLayout: DrawerLayout =
@@ -141,18 +163,8 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     }
 
     /*
-        Fragment Transaction -- for fragment transaction, that allows you to use intent feature for fragment
-    */
-
-
-    private fun openFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.framelayout, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
-
-
+        Bottom Tab layout setup
+     */
     @RequiresApi(Build.VERSION_CODES.M)
     private fun doInitialSetup() {
         setUpTabAdapter()
@@ -168,6 +180,7 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
 //
 //    }
 
+    @SuppressLint("InflateParams")
     @RequiresApi(Build.VERSION_CODES.M)
     private fun setUpTabAdapter() {
         dashboardTabAdapter = DashboardTabAdapter(supportFragmentManager, intent.extras)
@@ -219,4 +232,62 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     override fun onPageSelected(position: Int) {
         //do nothing
     }
+
+
+    /*
+          Action Bar items
+     */
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.action_bar_items, menu)
+
+        val searchItem = menu?.findItem(R.id.top_maps)
+       // val searchView = searchItem?.actionView as SearchView
+
+        // Configure the search info and add any event listeners...
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.top_maps -> {
+                val teamFragment = FragmentTeam.newInstance()
+                openFragment(teamFragment)
+                return true
+            }
+
+            R.id.top_faqs -> {
+                intent = Intent(applicationContext, ActivityFaq::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+
+            //this will bring in action the back button for ALL THE FRAGMENTS ATTACHED WITH THIS ACTIVITY AND HAVING BACK BUTTON
+            else -> {
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                super.onOptionsItemSelected(item)
+            }
+        }
+        return true
+    }
+
+
+    /*
+        Fragment Transaction -- for fragment transaction, that allows you to use intent feature for fragment
+    */
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.framelayout, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+
 }

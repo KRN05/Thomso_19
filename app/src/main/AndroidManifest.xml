@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         package="com.example.laxiweldemo">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+
 
     <application
             android:allowBackup="true"
             android:icon="@drawable/ic_launcher"
-            android:logo="@drawable/ic_launcher"
             android:label="@string/app_name"
+            android:logo="@drawable/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:uiOptions="splitActionBarWhenNarrow"
+            tools:ignore="AllowBackup">
 
         <activity
                 android:name=".DashboardActivity"
@@ -23,8 +35,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".bottomNavFragments.SilentDjFragment" />
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyAjEUOWa-d9ieAosRO7G8VLlhk0IUyApKI" />
+
         <activity android:name=".actionBarGroup.MapsFragment" />
         <activity android:name=".SideNavigationActivity" />
+        <activity
+                android:name=".actionBarGroup.ActivityFaq"
+                android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

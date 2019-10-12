@@ -1,0 +1,22 @@
+{
+"TeamDetails" : [
+{
+"name":"Karan",
+"title":"Developer",
+"email":"kbobade@gmail.com",
+"mobilenumber":"7218689420"
+},
+{
+"name":"Satyam",
+"title":"Designer",
+"email":"satyamchutya@gmail.com",
+"mobilenumber":"5556221214"
+},
+{
+"name":"Tanishq",
+"title":"Manager",
+"email":"chutya@gmail.com",
+"mobilenumber":"8877665544"
+}
+]
+}

@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laxiweldemo.R
-import com.example.laxiweldemo.dtos.PronitesDTO
 import com.example.laxiweldemo.dtos.SponsorsDTO
 
 class SponsorViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
@@ -18,6 +17,6 @@ class SponsorViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
     }
 
     fun bind(mSponsors: SponsorsDTO) {
-        sponsorsImage?.imageAlpha = mSponsors.sponsorsAvatar
+        sponsorsImage?.setImageResource(mSponsors.sponsorsAvatar)
     }
 }

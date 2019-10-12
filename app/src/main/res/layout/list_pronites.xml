@@ -8,6 +8,6 @@
             android:id="@+id/pronites_card"
             android:layout_width="254dp"
             android:layout_height="385dp"
-            app:srcCompat="@drawable/pronites_baba" />
+            app:srcCompat="@drawable/tiger" />
 
 </LinearLayout>
