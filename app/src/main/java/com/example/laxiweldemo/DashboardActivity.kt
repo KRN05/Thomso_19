@@ -15,14 +15,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.example.laxiweldemo.adapters.DashboardTabAdapter
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.example.laxiweldemo.actionBarGroup.ActivityFaq
+import com.example.laxiweldemo.actionBarGroup.MapsFragment
 import com.example.laxiweldemo.sideNavBarFragments.*
 import kotlinx.android.synthetic.main.dashboard_activity.*
 
@@ -35,22 +33,22 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
 
     private var dashboardTabAdapter: DashboardTabAdapter? = null
 
+    protected lateinit var mActivity: AppCompatActivity
+
+    private val CARNIVAL_TAB = 0
+    private val EVENTS_TAB = 1
+    private val HOME_TAB = 2
+    private val WORKSHOP_TAB = 3
+    private val SILENTDJ_TAB = 4
+
+
     val bottomTabIcon = arrayOf(
-        R.drawable.ic_carnival_icon,
-        R.drawable.ic_events_icon,
-        R.drawable.ic_home_icon,
-        R.drawable.ic_workshops,
-        R.drawable.ic_silent_dj
+        R.drawable.selector_tab_carnival,
+        R.drawable.selector_tab_events,
+        R.drawable.selector_tab_home,
+        R.drawable.selector_tab_workshop,
+        R.drawable.selector_tab_silentdj
     )
-
-    val bottomTabIconSelected = arrayOf(
-        R.drawable.ic_carnival_colored,
-        R.drawable.ic_carnival_colored,
-        R.drawable.ic_carnival_colored,
-        R.drawable.ic_carnival_colored,
-        R.drawable.ic_carnival_colored
-    )
-
 
     val navLabels = arrayOf(
         R.string.carnival,
@@ -64,6 +62,8 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_activity)
+
+        mActivity = this
 
         doInitialSetup()
 
@@ -99,11 +99,6 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
 
         sideNavView.setNavigationItemSelectedListener(this)
 
-        // my_child_toolbar is defined in the layout file
-       // setSupportActionBar(findViewById(R.id.my_child_toolbar))
-
-        // Get a support ActionBar corresponding to this toolbar and enable the Up button
-       // supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
 
@@ -117,8 +112,6 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     }
 
 
-
-
     /*
        for SIDE NAV
      */
@@ -128,12 +121,14 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
         when (item.itemId) {
             R.id.nav_makePayment -> {
                 val openURL = Intent(Intent.ACTION_VIEW)
-                openURL.data = Uri.parse("https://www.thomso.in")
+                openURL.data = Uri.parse("https://www.townscript.com/e/thomso-424321")
                 startActivity(openURL)
 
             }
-            R.id.nav_maps -> {
-
+            R.id.nav_result -> {
+                val openURL = Intent(Intent.ACTION_VIEW)
+                openURL.data = Uri.parse("https://www.facebook.com/thomsoiitroorkee")
+                startActivity(openURL)
             }
             R.id.nav_food_n_beverages -> {
                 val foodnBeveragesFragment = FragmentFoodnBeverages.newInstance()
@@ -148,8 +143,9 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
                 openFragment(developerFragment)
             }
             R.id.nav_sponsors -> {
-                val sponsorsFragment = FragmentSponsors.newInstance()
-                openFragment(sponsorsFragment)
+                val openURL = Intent(Intent.ACTION_VIEW)
+                openURL.data = Uri.parse("https://www.thomso.in/sponsors")
+                startActivity(openURL)
             }
             R.id.nav_emergency -> {
                 val EmergencyFragment = FragmentEmergency.newInstance()
@@ -168,17 +164,8 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     @RequiresApi(Build.VERSION_CODES.M)
     private fun doInitialSetup() {
         setUpTabAdapter()
-//        setUpTabIcons()
     }
 
-//    private fun setUpTabIcons(){
-//        bottomTabLayout.getTabAt(0)?.setIcon(bottomTabIcon[0]);
-//        bottomTabLayout.getTabAt(1)?.setIcon(bottomTabIcon[1]);
-//        bottomTabLayout.getTabAt(2)?.setIcon(bottomTabIcon[2]);
-//        bottomTabLayout.getTabAt(3)?.setIcon(bottomTabIcon[3]);
-//        bottomTabLayout.getTabAt(4)?.setIcon(bottomTabIcon[4]);
-//
-//    }
 
     @SuppressLint("InflateParams")
     @RequiresApi(Build.VERSION_CODES.M)
@@ -187,34 +174,21 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
         viewpager_dashboard.adapter = dashboardTabAdapter
         viewpager_dashboard.offscreenPageLimit = 4
         bottomTabLayout.setupWithViewPager(viewpager_dashboard)
+        bottomTabLayout.removeAllTabs()
 
-
-        for (i in 0 until bottomTabLayout.getTabCount()) {
-            // inflate the Parent LinearLayout Container for the tab
-            // from the layout nav_tab.xml file that we created 'R.layout.nav_tab
-            val tab = LayoutInflater.from(this).inflate(
-                R.layout.list_bottom_tab_layout,
-                null
-            ) as LinearLayout
-
-            // get child TextView and ImageView from this layout for the icon and label
-            val tab_label = tab.findViewById(R.id.nav_label) as TextView
-            val tab_icon = tab.findViewById(R.id.nav_icon) as ImageView
-
-            // set the label text by getting the actual string value by its id
-            // by getting the actual resource value `getResources().getString(string_id)`
-            tab_label.text = resources.getString(navLabels[i])
-
-            // set the home to be active at first
-            if (i == 0) {
-                tab_label.setTextColor(resources.getColor(R.color.colorPrimary, theme));
-                tab_icon.setImageResource(bottomTabIconSelected[i])
-            } else {
-                tab_icon.setImageResource(bottomTabIcon[i])
+        dashboardTabAdapter?.let {
+            for (i in 0 until it.count) {
+                val tab = bottomTabLayout.newTab()
+                val tabName = mActivity.layoutInflater.inflate(
+                    R.layout.tab,
+                    bottomTabLayout,
+                    false
+                ) as TextView
+                tabName.text = resources.getStringArray(R.array.dashboardTabsNames)[i]
+                tabName.setCompoundDrawablesWithIntrinsicBounds(0, bottomTabIcon[i], 0, 0)
+                tab.customView = tabName
+                bottomTabLayout.addTab(tab, i, i == HOME_TAB)
             }
-
-            // finally publish this custom view to navigation tab
-            bottomTabLayout.getTabAt(i)?.customView = tab
         }
 
         viewpager_dashboard.addOnPageChangeListener(this)
@@ -242,7 +216,7 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
         menuInflater.inflate(R.menu.action_bar_items, menu)
 
         val searchItem = menu?.findItem(R.id.top_maps)
-       // val searchView = searchItem?.actionView as SearchView
+        // val searchView = searchItem?.actionView as SearchView
 
         // Configure the search info and add any event listeners...
 
@@ -252,8 +226,8 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.top_maps -> {
-                val teamFragment = FragmentTeam.newInstance()
-                openFragment(teamFragment)
+                intent = Intent(applicationContext, MapsFragment::class.java)
+                startActivity(intent)
                 return true
             }
 
@@ -288,6 +262,5 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
         transaction.addToBackStack(null)
         transaction.commit()
     }
-
 
 }

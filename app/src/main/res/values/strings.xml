@@ -2,26 +2,13 @@
     <string name="app_name">Thomso\'19</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="account">Account</string>
-    <string name="support">Support</string>
-    <string name="setting">Settings</string>
-    <string name="communicate">Communicate</string>
-    <string name="feedback">Feedback</string>
-    <string name="app_guide">App Guide</string>
-    <string name="share">Share</string>
-    <string name="title_activity_bottom_nav">BottomNavActivity</string>
     <string name="title_home">HOME</string>
     <string name="silent_dj">SILENT DJ</string>
     <string name="workshops">WORKSHOPS</string>
     <string name="carnival">CARNIVAL</string>
     <string name="events">EVENTS</string>
     <string name="make_payment">MAKE PAYMENT</string>
-    <string name="map">MAP</string>
     <string name="food_n_beverages">FOOD N BEVERAGES</string>
     <string name="team">OUR TEAM</string>
     <string name="developer">DEVELOPER</string>
@@ -30,31 +17,6 @@
     <string name="todo">TODO</string>
     <string name="pay_now">PAY NOW</string>
 
-
-    <string-array name="eventsDayName">
-        <item>ONGOING</item>
-        <item>DAY 1</item>
-        <item>DAY 2</item>
-        <item>DAY 3</item>
-    </string-array>
-    <string name="title_activity_side_navigation">SideNavigation</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-    <string name="textview">TextView</string>
-
-
-    <!--    <string-array name="dashboardTabsNames">-->
-    <!--        <item>CARNIVAL</item>-->
-    <!--        <item>EVENTS</item>-->
-    <!--        <item>HOME</item>-->
-    <!--        <item>WORKSHOPS</item>-->
-    <!--        <item>SILENT DJ</item>-->
-    <!--    </string-array>-->
 
     <string name="foodnBeverages">1. Every Bhawan has it\'s own canteen which runs from 2pm to 2am.\n
     2. There are cafeterias at the gate of most of the Bhawans which run from 2am to 2pm.\n
@@ -67,6 +29,25 @@
 
     <string name="securityMale">Security(M)\nAnshu Singh</string>
 
-    <string name="securityFemale">Security(F)\nAnshu Singh</string>
+    <string name="securityFemale">Security(F)\nVedanti Khokher</string>
+
+    <string-array name="dashboardTabsNames">
+        <item>CARNIVAL</item>
+        <item>EVENTS</item>
+        <item>HOME</item>
+        <item>WORKSHOPS</item>
+        <item>SILENT DJ</item>
+    </string-array>
+
+    <string name="result">RESULT</string>
+    <string name="karan_bobade">Karan Bobade</string>
+    <string name="krnbde5_gmail_com">krnbde5@gmail.com</string>
+
+    <string name="eventOverviewTime">Timing :  %1$s" - "%2$s</string>
+    <string name="eventCod">Coordinator:  %1$s</string>
+    <string name="eventContact">Contact:  %1$s</string>
+    <string name="eventLocation">Location:  %1$s</string>
+
+
 
 </resources>

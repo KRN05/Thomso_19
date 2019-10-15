@@ -22,6 +22,6 @@ class FaqAdapter (private val faq: ArrayList<FaqDTO>) :
         holder.bind(mFaq)
     }
 
-    override fun getItemCount(): Int = faq.size
+    override fun getItemCount(): Int = 13
 }
 

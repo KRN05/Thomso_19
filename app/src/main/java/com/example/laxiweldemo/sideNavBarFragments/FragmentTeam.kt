@@ -13,7 +13,9 @@ import com.example.laxiweldemo.dtos.TeamDTO
 import kotlinx.android.synthetic.main.fragment_team.*
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.laxiweldemo.dtos.TeamDTOArrayList
+import com.example.laxiweldemo.dtos.TeamPhotoDTO
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import java.io.IOException
@@ -24,8 +26,8 @@ import java.nio.charset.Charset
 
 class FragmentTeam : Fragment() {
 
-    val teamList = arrayListOf(
-        TeamDTO(R.drawable.ic_launcher, "Karan Bobade", "Developer","karanb.thomso@gmail.com", "7218689420")
+    val teamPhoto = arrayListOf(
+        TeamPhotoDTO(R.drawable.ic_launcher)
     )
 
     companion object {
@@ -55,12 +57,12 @@ class FragmentTeam : Fragment() {
         Log.d("Json String",jsonstr)
         val gson = Gson()
         GsonBuilder().setPrettyPrinting().create()
-        var teamMembers: TeamDTOArrayList =  gson.fromJson(jsonstr,TeamDTOArrayList::class.java)
+        val teamMembers: TeamDTOArrayList =  gson.fromJson(jsonstr,TeamDTOArrayList::class.java)
         Log.d("Team List", teamMembers.toString())
         team_recycler_view.apply {
 
             // set a LinearLayoutManager to handle Android RecyclerView behavior
-            layoutManager = GridLayoutManager(activity, 1)
+            layoutManager = GridLayoutManager(activity, 1) as RecyclerView.LayoutManager?
             team_recycler_view.
                 // set the custom adapter to the RecyclerView
                 adapter = TeamAdapter(teamMembers.TeamDetails)

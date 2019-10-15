@@ -10,9 +10,7 @@ import com.example.laxiweldemo.bottomNavFragments.*
 
 class DashboardTabAdapter (fm: FragmentManager?, private val bundle: Bundle?) : FragmentPagerAdapter(fm) {
 
-    private val TAG = javaClass.name
-
-    private var carnivalFragment: CarnivalAdapter? = null
+    private var carnivalFragment: CarnivalFragment? = null
     private var eventsFragment: EventsFragment? = null
     private var homeFragment: HomeFragment? = null
     private var workshopsFragment: WorkshopsFragment? = null
@@ -26,7 +24,7 @@ class DashboardTabAdapter (fm: FragmentManager?, private val bundle: Bundle?) : 
     override fun getItem(position: Int): Fragment {
         when (position) {
             0 -> {
-                return CarnivalAdapter.newInstance()
+                return CarnivalFragment.newInstance()
             }
             1 -> {
                 return EventsFragment.newInstance()
@@ -51,7 +49,7 @@ class DashboardTabAdapter (fm: FragmentManager?, private val bundle: Bundle?) : 
 
         when (position) {
             0 -> {
-                if (fragment is CarnivalAdapter) {
+                if (fragment is CarnivalFragment) {
                     carnivalFragment = CarnivalFragment()
                 }
             }

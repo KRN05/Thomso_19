@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laxiweldemo.R
 import com.example.laxiweldemo.dtos.TeamDTO
+import com.example.laxiweldemo.dtos.TeamPhotoDTO
 
 class TeamViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.list_team, parent, false)) {
@@ -29,11 +30,13 @@ class TeamViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
     }
 
     fun bind(mEvents: TeamDTO) {
-        team_photo?.setImageResource(mEvents.teamPhoto)
         team_name?.text=mEvents.name
         team_post?.text= mEvents.title
         team_email?.text=mEvents.email
         team_number?.text=mEvents.mobilenumber
+    }
 
+    fun bindAvatar(mEvents: TeamDTO){
+        team_photo?.setImageResource(mEvents.teamPhoto)
     }
 }

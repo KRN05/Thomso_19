@@ -20,9 +20,9 @@ class HomeFragment: Fragment(){
 
 
     var pronitesList = arrayListOf(
-        PronitesDTO(R.drawable.tiger),
-        PronitesDTO(R.drawable.tiger),
-        PronitesDTO(R.drawable.tiger)
+        PronitesDTO(R.drawable.pronites_baba),
+        PronitesDTO(R.drawable.pronites_baba),
+        PronitesDTO(R.drawable.pronites_baba)
     )
 
     var majorAttractionList = arrayListOf(

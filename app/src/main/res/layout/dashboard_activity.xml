@@ -22,22 +22,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <androidx.viewpager.widget.ViewPager
+            <com.example.laxiweldemo.NonSwipeableViewPager
                     android:id="@+id/viewpager_dashboard"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/bottomTabLayout"/>
 
 
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                    android:id="@+id/bottomTabLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    app:tabSelectedTextColor="@color/colorPrimary"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"/>-->
+
             <com.google.android.material.tabs.TabLayout
                     android:id="@+id/bottomTabLayout"
                     android:layout_width="match_parent"
-                    app:tabSelectedTextColor="@color/colorPrimary"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_bottom_nav_background"
-                    android:layout_alignParentBottom="true">
-
-            </com.google.android.material.tabs.TabLayout>
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/ic_bottom_layout_background"
+                    app:tabTextColor="@color/gray"
+                    android:elevation="12dp"
+                    android:paddingTop="12dp"
+                    app:tabBackground="?attr/selectableItemBackgroundBorderless"
+                    app:tabGravity="fill"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMode="fixed"
+                    app:tabUnboundedRipple="true"
+                    tools:ignore="UnusedAttribute" />
 
         </RelativeLayout>
 

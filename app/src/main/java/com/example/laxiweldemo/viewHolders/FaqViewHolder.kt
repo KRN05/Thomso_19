@@ -20,8 +20,8 @@ class FaqViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     }
 
     fun bind(faqs: FaqDTO){
-        mFaqs?.text=faqs.title
-        mFaqsDescription?.text=faqs.description
+        mFaqs?.text=faqs.question
+        mFaqsDescription?.text=faqs.answer
 
     }
 }

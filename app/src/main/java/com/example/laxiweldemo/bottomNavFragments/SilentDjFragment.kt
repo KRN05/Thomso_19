@@ -29,7 +29,7 @@ class SilentDjFragment : Fragment() {
 
         silent_dj_pay_now.setOnClickListener(){
             val openURL = Intent(Intent.ACTION_VIEW)
-            openURL.data = Uri.parse("https://www.thomso.in")
+            openURL.data = Uri.parse("https://www.townscript.com/e/thomso-silent-dj-230002")
             startActivity(openURL)
         }
 

@@ -3,20 +3,18 @@ package com.example.laxiweldemo.sideNavBarFragments
 import android.Manifest
 import android.content.Intent
 import android.content.Intent.ACTION_CALL
-import android.content.Intent.parseUri
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.laxiweldemo.DashboardActivity
 import com.example.laxiweldemo.R
 import kotlinx.android.synthetic.main.fragment_emergency.*
 
@@ -50,27 +48,43 @@ class FragmentEmergency : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*
+               hospital location
+         */
+        val mHospital = view.findViewById(R.id.hospital) as ImageView;
 
-        ambulance.setOnClickListener {
-            checkPermission()
+        val mapsLocations =
+            arrayOf("geo:0,0?q=IIT Hospital, IIT, Indian Institute of Technology Roorkee, Roorkee, Uttarakhand 247667")
+
+        val mlHospital = Uri.parse(mapsLocations[0])
+        val mapIntent = Intent(Intent.ACTION_VIEW, mlHospital)
+        mapIntent.setPackage("com.google.android.apps.maps")
+
+        mHospital.setOnClickListener {
+            val packageManager: PackageManager = activity!!.packageManager
+            if (mapIntent.resolveActivity(packageManager) != null) {
+                startActivity(mapIntent)
+            }
         }
+
+
         anshu_singh.setOnClickListener {
-            checkPermission()
+            checkPermission(1)
 
         }
 
         anshu_singh_f.setOnClickListener {
-            checkPermission()
+            checkPermission(2)
         }
 
-        hospital_icon.setOnClickListener {
-
+        ambulance.setOnClickListener {
+            checkPermission(3)
         }
 
 
     }
 
-    private fun checkPermission() {
+    private fun checkPermission(eNum : Int) {
         if (context?.let {
                 ActivityCompat.checkSelfPermission(
                     it,
@@ -78,12 +92,16 @@ class FragmentEmergency : Fragment() {
                 )
             } != PackageManager.PERMISSION_GRANTED) {
 
-            Toast.makeText(context,"Allow Phone calls",LENGTH_SHORT).show()
+            activity?.let {
+                ActivityCompat.requestPermissions(
+                    it,
+                    arrayOf(Manifest.permission.CALL_PHONE), 42
+                )
+            }
         } else {
-            callPhone()
+            callPhone(eNum)
         }
     }
-
 
 
     override fun onRequestPermissionsResult(
@@ -93,8 +111,8 @@ class FragmentEmergency : Fragment() {
         if (requestCode == 42) {
             // If request is cancelled, the result arrays are empty.
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                // permission was granted, yay!
-                callPhone()
+                // permission was granted, yay! do the call related action u wanted to do
+                //callPhone(eNum)
             } else {
                 // permission denied, boo! Disable the
                 // functionality
@@ -103,8 +121,22 @@ class FragmentEmergency : Fragment() {
         }
     }
 
-    fun callPhone() {
-        val intent = Intent(ACTION_CALL, Uri.parse("tel:" + "7218689420"))
+    fun callPhone(eNum: Int) {
+        var numberPass : String?=null
+        when(eNum){
+            1->{
+                numberPass="7302201760"
+            }
+            2->{
+                numberPass="8742953966"
+            }
+            3->{
+                numberPass="01332284260"
+            }
+        }
+
+
+        val intent = Intent(ACTION_CALL, Uri.parse("tel:" + numberPass))
         startActivity(intent)
     }
 }

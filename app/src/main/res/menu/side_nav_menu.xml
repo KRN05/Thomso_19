@@ -10,8 +10,8 @@
                 android:id="@+id/nav_makePayment"
                 android:title="@string/make_payment"/>
         <item
-                android:id="@+id/nav_maps"
-                android:title="@string/map"/>
+                android:id="@+id/nav_result"
+                android:title="@string/result"/>
         <item
                 android:id="@+id/nav_food_n_beverages"
                 android:title="@string/food_n_beverages"/>

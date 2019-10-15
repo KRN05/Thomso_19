@@ -22,8 +22,9 @@ class WorkshopsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         workshopsImage = itemView.findViewById(R.id.workshopCard)
         workshopsName=itemView.findViewById(R.id.workshopName)
         workshopCharge=itemView.findViewById(R.id.pay_or_free)
-
     }
+
+
 
     fun bind(mWorkshops: WorkshopsDTO) {
         workshopsImage?.setImageResource(mWorkshops.poster)

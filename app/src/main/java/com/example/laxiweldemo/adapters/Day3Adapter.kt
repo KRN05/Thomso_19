@@ -1,14 +1,16 @@
 package com.example.laxiweldemo.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laxiweldemo.dtos.Day3DTO
+import com.example.laxiweldemo.dtos.EventsDTO
 import com.example.laxiweldemo.viewHolders.Day3ViewHolder
 
-class Day3Adapter (private val eventsday1: ArrayList<Day3DTO>) :
+class Day3Adapter (private val day3Ev: ArrayList<EventsDTO>) :
     RecyclerView.Adapter<Day3ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Day3ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -16,10 +18,18 @@ class Day3Adapter (private val eventsday1: ArrayList<Day3DTO>) :
     }
 
     override fun onBindViewHolder(holder: Day3ViewHolder, position: Int) {
-        val events: Day3DTO = eventsday1[position]
-        holder.bind(events)
+        val mDay2Ev: EventsDTO = day3Ev[position]
+        holder.bind(mDay2Ev)
+
+        if (mDay2Ev.event_day=="day3"){
+            holder.itemView.visibility = View.VISIBLE
+        }else{
+            holder.itemView.layoutParams = LinearLayout.LayoutParams(0, 0)
+        }
+
+        Day2Adapter(day3Ev).notifyItemRemoved(position)
+
     }
 
-    override fun getItemCount(): Int = eventsday1.size
-
+    override fun getItemCount(): Int = day3Ev.size
 }

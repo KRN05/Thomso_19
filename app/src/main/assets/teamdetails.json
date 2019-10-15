@@ -1,22 +1,164 @@
 {
 "TeamDetails" : [
 {
-"name":"Karan",
-"title":"Developer",
-"email":"kbobade@gmail.com",
-"mobilenumber":"7218689420"
+"name":"Rohit Niranjan",
+"title":"Convenor",
+"email":"niranjan98.thomso@gmail.com",
+"mobilenumber":"7023511775",
+  "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+  "instalink": "https://www.instagram.com/shreyansh62/",
+  "linkedln": "https://www.linkedin.com/in/shreyanshjn"
 },
 {
-"name":"Satyam",
-"title":"Designer",
-"email":"satyamchutya@gmail.com",
-"mobilenumber":"5556221214"
+"name":"Harshit Kankariya",
+"title":"Co-Convenor",
+"email":"harshit.thomso@gmail.com",
+"mobilenumber":"9411028240",
+  "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+  "instalink": "https://www.instagram.com/shreyansh62/",
+  "linkedln": "https://www.linkedin.com/in/shreyanshjn"
 },
 {
-"name":"Tanishq",
-"title":"Manager",
-"email":"chutya@gmail.com",
-"mobilenumber":"8877665544"
-}
+"name":"Rishabh Rana",
+"title":"Co-Convenor",
+"email":"rishabh.thomso@gmail.com",
+"mobilenumber":"7302201726",
+  "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+  "instalink": "https://www.instagram.com/shreyansh62/",
+  "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+},
+  {
+    "name":"Ayush Dhaka",
+    "title":"Co-Convenor",
+    "email":"ayush.thomso@gmail.com",
+    "mobilenumber":"9411028240",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+  {
+    "name":"Manu Garg",
+    "title":"Co-Convenor",
+    "email":"manu.thomso@gmail.com",
+    "mobilenumber":"8795500000",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+  {
+    "name":"Pulkit khanna",
+    "title":"Events",
+    "email":"pulkit.thomso@gmail.com",
+    "mobilenumber":"9079208716",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+  {
+    "name":"Tanishq Khandelwal",
+    "title":"Events",
+    "email":"tanishq.thomso@gmail.com",
+    "mobilenumber":"9711660094",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+  {
+    "name":"Saakshya Dewat",
+    "title":"Sponsorships",
+    "email":"shakshay.thomso@gmail.com",
+    "mobilenumber":"7409007069",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+  {
+    "name":"Rupali Yadav",
+    "title":"Design",
+    "email":"rupalirimi24@gmail.com",
+    "mobilenumber":"8755730069",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+  {
+    "name":"Abdulahad Khan",
+    "title":"Marketing",
+    "email":"abdul.thomso@gmail.com",
+    "mobilenumber":"9834653974",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+
+  {
+    "name":"Jivesh Agarwal",
+    "title":"Events",
+    "email":"jivesh.thomso2018@gmail.com",
+    "mobilenumber":"9699000012",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+
+  {
+    "name":"Abhay Agrawal",
+    "title":"Promotions",
+    "email":"abhay.thomso@gmail.com",
+    "mobilenumber":"9131700765",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+
+  {
+    "name":"Vivek Kumar",
+    "title":"Events",
+    "email":"vivek.thomso@gmail.com",
+    "mobilenumber":"8285179127",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+
+  {
+    "name":"Satyam Dahlan",
+    "title":"Design",
+    "email":"satyam.thomso@gmail.com",
+    "mobilenumber":"9413717889",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+
+  {
+    "name":"Mayan Sachan",
+    "title":"Design",
+    "email":"mayansachan12@gmail.com",
+    "mobilenumber":"9415100182",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+
+  {
+    "name":"Shreyansh Jain",
+    "title":"Technical Head",
+    "email":"shreyansh@thomso.in",
+    "mobilenumber":"7239923960",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  },
+
+  {
+    "name":"Harsh Vardhan",
+    "title":"Technical Head",
+    "email":"vardhan@thomso.gmail.com",
+    "mobilenumber":"9557617768",
+    "fblink": "https://www.facebook.com/shreyansh.jain.37266",
+    "instalink": "https://www.instagram.com/shreyansh62/",
+    "linkedln": "https://www.linkedin.com/in/shreyanshjn"
+  }
 ]
 }

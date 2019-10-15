@@ -15,73 +15,36 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:padding="10dp"
+            android:layout_marginTop="@dimen/margin15"
+            android:layout_marginStart="@dimen/margin18"
+            android:layout_marginEnd="@dimen/margin18"
+            android:padding="@dimen/pad10"
             android:background="@drawable/ic_events_ongoing_list_background"
             android:orientation="horizontal">
 
 
         <ImageView
-                android:layout_width="10dp"
-                android:layout_height="17dp"
+                android:layout_width="@dimen/widht10"
+                android:layout_height="@dimen/width17"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/ic_dot" />
 
         <TextView
-                android:layout_width="304dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|start"
                 android:maxLines="5"
-                android:paddingStart="10dp"
-                android:text="Ambulance"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-
-        <ImageView
-                android:id="@+id/ambulance"
-                android:layout_width="30dp"
-                android:layout_height="26dp"
-                android:foregroundGravity="center"
-                app:srcCompat="@drawable/ic_phone_call" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:padding="10dp"
-            android:background="@drawable/ic_events_ongoing_list_background"
-            android:orientation="horizontal">
-
-
-        <ImageView
-                android:layout_width="10dp"
-                android:layout_height="17dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_dot" />
-
-        <TextView
-                android:layout_width="304dp"
-                android:layout_height="wrap_content"
-                android:gravity="center|start"
-                android:maxLines="5"
-                android:paddingStart="10dp"
+                android:paddingStart="@dimen/pad10"
                 android:text="Hospital"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="@dimen/size18" />
 
 
         <ImageView
-                android:id="@+id/hospital_icon"
-                android:layout_width="30dp"
-                android:layout_height="26dp"
+                android:id="@+id/hospital"
+                android:layout_width="@dimen/dimen30"
+                android:layout_height="@dimen/dimen26"
+                android:layout_marginStart="230dp"
                 android:foregroundGravity="center"
                 app:srcCompat="@drawable/ic_maps" />
 
@@ -104,22 +67,23 @@
                 android:layout_height="17dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/ic_dot" />
+
         <TextView
-                android:layout_width="304dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|start"
                 android:maxLines="5"
                 android:paddingStart="10dp"
-                android:text="@string/securityMale"
+                android:text="Ambulance"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
 
         <ImageView
-                android:id="@+id/anshu_singh"
+                android:id="@+id/ambulance"
                 android:layout_width="30dp"
                 android:layout_height="26dp"
-                android:layout_gravity="center"
+                android:layout_marginStart="205dp"
                 android:foregroundGravity="center"
                 app:srcCompat="@drawable/ic_phone_call" />
 
@@ -144,7 +108,47 @@
                 app:srcCompat="@drawable/ic_dot" />
 
         <TextView
-                android:layout_width="304dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:maxLines="5"
+                android:paddingStart="10dp"
+                android:text="@string/securityMale"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+
+        <ImageView
+                android:id="@+id/anshu_singh"
+                android:layout_width="30dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="195dp"
+                android:foregroundGravity="center"
+                app:srcCompat="@drawable/ic_phone_call" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:padding="10dp"
+            android:background="@drawable/ic_events_ongoing_list_background"
+            android:orientation="horizontal">
+
+
+        <ImageView
+                android:layout_width="10dp"
+                android:layout_height="17dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_dot" />
+
+        <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|start"
                 android:maxLines="5"
@@ -159,6 +163,7 @@
                 android:layout_width="30dp"
                 android:layout_height="26dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="165dp"
                 android:foregroundGravity="center"
                 app:srcCompat="@drawable/ic_phone_call" />
 

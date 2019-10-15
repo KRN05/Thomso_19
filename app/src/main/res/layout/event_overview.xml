@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:autofit="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/main_background">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <ScrollView xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:scrollbarSize="2dp"
+                tools:context="vcool.thomso.in.thomso.Pronite_Day1">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="14dp"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center">
+
+                    <me.grantland.widget.AutofitTextView
+                            android:id="@+id/event_overview_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="40sp"
+                            />
+                </RelativeLayout>
+
+                <TextView
+                        android:id="@+id/event_overview_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="19dp" />
+
+                <TextView
+                        android:id="@+id/event_overview_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingTop="5dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                <TextView
+                        android:id="@+id/event_overview_coord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingTop="5dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                <TextView
+                        android:id="@+id/event_overview_coord_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingTop="5dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                <TextView
+                        android:id="@+id/event_overview_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:paddingTop="5dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_arc_menu_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fab_arc_menu_2"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:onClick="openCallLog"
+            android:src="@android:drawable/stat_sys_phone_call"
+            app:backgroundTint="#0fb33d" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_arc_menu_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:onClick="openGoogleMaps"
+            android:src="@android:drawable/ic_dialog_map"
+            app:backgroundTint="#01579B" />
+
+</RelativeLayout>

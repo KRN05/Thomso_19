@@ -1,4 +1,4 @@
 package com.example.laxiweldemo.dtos
 
-data class FaqDTO(val title : String, val description: String) {
+data class FaqDTO(val question : String, val answer: String) {
 }

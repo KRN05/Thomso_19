@@ -9,5 +9,13 @@
     <!-- for same size of bottom navigation text, don't change the sp size, focus will start again, it is an onclick-->
     <dimen name="design_bottom_navigation_active_text_size" tools:override="true">10dp</dimen>
     <dimen name="design_bottom_navigation_text_size" tools:override="true">10sp</dimen>
+    <dimen name="dimen30">30dp</dimen>
+    <dimen name="dimen26">26dp</dimen>
+    <dimen name="size18">18sp</dimen>
+    <dimen name="pad10">10dp</dimen>
+    <dimen name="widht10">10dp</dimen>
+    <dimen name="width17">17dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="margin18">18dp</dimen>
 
 </resources>

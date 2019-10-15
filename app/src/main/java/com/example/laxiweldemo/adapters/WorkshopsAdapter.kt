@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laxiweldemo.dtos.WorkshopsDTO
-import com.example.laxiweldemo.viewHolders.MapsViewHolder
 import com.example.laxiweldemo.viewHolders.WorkshopsViewHolder
 
 class WorkshopsAdapter(private val workshops: ArrayList<WorkshopsDTO>) :

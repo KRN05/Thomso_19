@@ -1,6 +1,7 @@
 package com.example.laxiweldemo.actionBarGroup
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,16 +10,14 @@ import com.example.laxiweldemo.adapters.FaqAdapter
 import com.example.laxiweldemo.dtos.FaqDTO
 import kotlinx.android.synthetic.main.activity_faqs.*
 import android.view.MenuItem
+import com.example.laxiweldemo.dtos.FaqDTOArraylist
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import java.io.IOException
+import java.nio.charset.Charset
 
 
 class ActivityFaq : AppCompatActivity() {
-
-    val faqNum= arrayListOf(
-        FaqDTO("What is the", "Create an ArrayList and add a bunch of animals to the list.\n" +
-                "Add a LinearLayoutManager. Layout Managers are used to position views inside the RecyclerView. They also determine when to reuse item views that are no longer visible to the user.\n" +
-                "(You can use GridLayoutManager instead of LinearLayoutManager if you want a grid layout and add the number of columns as a parameter)")
-    )
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +33,13 @@ class ActivityFaq : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
+        val jsonstr : String? = loadJSONFromAsset()
+        Log.d("Json String",jsonstr)
+        val gson = Gson()
+        GsonBuilder().setPrettyPrinting().create()
+        val mFaqs: FaqDTOArraylist =  gson.fromJson(jsonstr, FaqDTOArraylist::class.java)
+        Log.d("Team List", mFaqs.toString())
+
 
         faq_recycler_view.layoutManager = LinearLayoutManager(this)
 
@@ -41,7 +47,25 @@ class ActivityFaq : AppCompatActivity() {
 //        rv_animal_list.layoutManager = GridLayoutManager(this, 2)
 
         // Access the RecyclerView Adapter and load the data into it
-        faq_recycler_view.adapter = FaqAdapter(faqNum)
+        faq_recycler_view.adapter = FaqAdapter(mFaqs.FaqDetails)
+    }
+
+    private fun loadJSONFromAsset(): String? {
+        //function to load the JSON from the Asset and return the object
+        var json: String? = null
+        val charset: Charset = Charsets.UTF_8
+        try {
+            val fileJson = assets?.open("faqs.json")
+            val size = fileJson?.available()
+            val buffer = size?.let { ByteArray(it) }
+            fileJson?.read(buffer)
+            fileJson?.close()
+            json = buffer?.let { String(it, charset) }
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return null
+        }
+        return json
     }
 
 

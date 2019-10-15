@@ -1,6 +1,7 @@
 package com.example.laxiweldemo.eventsDays
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +11,13 @@ import com.example.laxiweldemo.R
 import com.example.laxiweldemo.adapters.Day1Adapter
 import com.example.laxiweldemo.adapters.Day2Adapter
 import com.example.laxiweldemo.dtos.Day2DTO
+import com.example.laxiweldemo.dtos.EventsDTOArraylist
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.events_day1.*
 import kotlinx.android.synthetic.main.events_day2.*
+import java.io.IOException
+import java.nio.charset.Charset
 
 class FragmentDay2 : Fragment() {
 
@@ -36,6 +42,13 @@ class FragmentDay2 : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+
+        val jsonstr : String? = loadJSONFromAsset()
+        Log.d("Json String",jsonstr)
+        val gson = Gson()
+        GsonBuilder().setPrettyPrinting().create()
+        val eventsList: EventsDTOArraylist =  gson.fromJson(jsonstr, EventsDTOArraylist::class.java)
         super.onViewCreated(view, savedInstanceState)
 
         day2_recycler_view.apply {
@@ -44,7 +57,25 @@ class FragmentDay2 : Fragment() {
             layoutManager = GridLayoutManager(activity, 1)
             day2_recycler_view.
                 // set the custom adapter to the RecyclerView
-                adapter = Day2Adapter(day2EventsList)
+                adapter = Day2Adapter(eventsList.EventsList)
         }
+    }
+
+    private fun loadJSONFromAsset(): String? {
+        //function to load the JSON from the Asset and return the object
+        var json: String? = null
+        val charset: Charset = Charsets.UTF_8
+        try {
+            val fileJson = activity?.assets?.open("eventsList.json")
+            val size = fileJson?.available()
+            val buffer = size?.let { ByteArray(it) }
+            fileJson?.read(buffer)
+            fileJson?.close()
+            json = buffer?.let { String(it, charset) }
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return null
+        }
+        return json
     }
 }

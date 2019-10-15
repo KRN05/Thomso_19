@@ -1,4 +1,3 @@
 package com.example.laxiweldemo.dtos
 
-class CarnivalNameDTO(val name: String) {
-}
+    class CarnivalNameDTO(val title: ArrayList<String>)
