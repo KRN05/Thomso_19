@@ -1,9 +1,7 @@
 package com.example.laxiweldemo
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -17,7 +15,6 @@ import androidx.viewpager.widget.ViewPager
 import com.example.laxiweldemo.adapters.DashboardTabAdapter
 import android.view.Menu
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.example.laxiweldemo.actionBarGroup.ActivityFaq
 import com.example.laxiweldemo.actionBarGroup.MapsFragment
@@ -50,15 +47,6 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
         R.drawable.selector_tab_silentdj
     )
 
-    val navLabels = arrayOf(
-        R.string.carnival,
-        R.string.events,
-        R.string.title_home,
-        R.string.workshops,
-        R.string.silent_dj
-    )
-
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_activity)
@@ -161,14 +149,10 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener,
     /*
         Bottom Tab layout setup
      */
-    @RequiresApi(Build.VERSION_CODES.M)
     private fun doInitialSetup() {
         setUpTabAdapter()
     }
 
-
-    @SuppressLint("InflateParams")
-    @RequiresApi(Build.VERSION_CODES.M)
     private fun setUpTabAdapter() {
         dashboardTabAdapter = DashboardTabAdapter(supportFragmentManager, intent.extras)
         viewpager_dashboard.adapter = dashboardTabAdapter

@@ -32,4 +32,12 @@ class Day3Adapter (private val day3Ev: ArrayList<EventsDTO>) :
     }
 
     override fun getItemCount(): Int = day3Ev.size
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
 }

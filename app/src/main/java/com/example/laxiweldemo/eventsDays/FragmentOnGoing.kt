@@ -1,32 +1,30 @@
 package com.example.laxiweldemo.eventsDays
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.laxiweldemo.R
 import com.example.laxiweldemo.adapters.OngoingAdapter
-import com.example.laxiweldemo.adapters.OngoingAdapter2
 import com.example.laxiweldemo.dtos.EventsDTO
 import com.example.laxiweldemo.dtos.EventsDTOArraylist
-import com.example.laxiweldemo.dtos.OngoingDTO
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import kotlinx.android.synthetic.main.events_day1.*
 import kotlinx.android.synthetic.main.events_ongoing.*
-import kotlinx.android.synthetic.main.events_ongoing_list.view.*
 import java.io.IOException
 import java.nio.charset.Charset
+
+
 
 class FragmentOnGoing : Fragment() {
 
     val mActivity : AppCompatActivity?=null
+
+   // var adapter: OngoingAdapter = getAda[]
 
     companion object {
         fun newInstance(): FragmentOnGoing {
@@ -41,7 +39,6 @@ class FragmentOnGoing : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.events_ongoing, container, false)
 
-
         return view
     }
 
@@ -55,26 +52,23 @@ class FragmentOnGoing : Fragment() {
         GsonBuilder().setPrettyPrinting().create()
         val eventsList: EventsDTOArraylist =  gson.fromJson(jsonstr, EventsDTOArraylist::class.java)
 
-        ongoing_recycler_view.apply {
+        val adapter = OngoingAdapter(eventsList.EventsList)
 
-            // set a LinearLayoutManager to handle Android RecyclerView behavior
-            layoutManager = GridLayoutManager(activity, 1)
-            ongoing_recycler_view.
-                // set the custom adapter to the RecyclerView
-                adapter = OngoingAdapter(eventsList.EventsList)
-        }
+            adapter.setHasStableIds(true)
+
+            //ongoing_visibility.visibility=View.INVISIBLE
+
+            ongoing_recycler_view.apply {
+
+                // set a LinearLayoutManager to handle Android RecyclerView behavior
+                layoutManager = GridLayoutManager(activity, 1)
+                ongoing_recycler_view.
+                    // set the custom adapter to the RecyclerView
+                    adapter = OngoingAdapter(eventsList.EventsList)
+            }
+
     }
 
-    private val onEventClickListener: OnItemClickListener<EventsDTO>? =
-        object : OnItemClickListener<EventsDTO> {
-            override fun onItemClick(item: EventsDTO) {
-                val loanDetails = Intent(mActivity, EventOverview::class.java)
-                startActivity(loanDetails)
-
-//                loanDetails.putExtra(AppConstants.EXTRAS_CONTACT_INFO, item)
-//                (activity as BaseAppCompactActivity).startActivityOnTop(loanDetails, false)
-            }
-        }
 
     private fun loadJSONFromAsset(): String? {
         //function to load the JSON from the Asset and return the object

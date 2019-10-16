@@ -23,5 +23,13 @@ class FaqAdapter (private val faq: ArrayList<FaqDTO>) :
     }
 
     override fun getItemCount(): Int = 13
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
 }
 

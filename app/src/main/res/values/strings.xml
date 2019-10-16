@@ -3,19 +3,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="title_home">HOME</string>
-    <string name="silent_dj">SILENT DJ</string>
-    <string name="workshops">WORKSHOPS</string>
-    <string name="carnival">CARNIVAL</string>
-    <string name="events">EVENTS</string>
     <string name="make_payment">MAKE PAYMENT</string>
     <string name="food_n_beverages">FOOD N BEVERAGES</string>
     <string name="team">OUR TEAM</string>
     <string name="developer">DEVELOPER</string>
     <string name="emergency">EMERGENCY</string>
     <string name="sponsors">SPONSORS</string>
-    <string name="todo">TODO</string>
-    <string name="pay_now">PAY NOW</string>
 
 
     <string name="foodnBeverages">1. Every Bhawan has it\'s own canteen which runs from 2pm to 2am.\n
@@ -27,9 +20,9 @@
     </string>
 
 
-    <string name="securityMale">Security(M)\nAnshu Singh</string>
+    <string name="securityMale">SECURITY (m)\nAnshu Singh</string>
 
-    <string name="securityFemale">Security(F)\nVedanti Khokher</string>
+    <string name="securityFemale">SECURITY (f)\nVedanti Khokher</string>
 
     <string-array name="dashboardTabsNames">
         <item>CARNIVAL</item>
@@ -47,7 +40,7 @@
     <string name="eventCod">Coordinator:  %1$s</string>
     <string name="eventContact">Contact:  %1$s</string>
     <string name="eventLocation">Location:  %1$s</string>
-
+    <string name="no_event">NO ONGOING EVENT</string>
 
 
 </resources>

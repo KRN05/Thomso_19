@@ -16,7 +16,7 @@
             android:layout_height="96dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:src="@drawable/krn" />
+            android:src="@drawable/krn_2" />
 
     <TextView
             android:id="@+id/textView"

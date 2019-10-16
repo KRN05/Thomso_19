@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.laxiweldemo.R
 import com.example.laxiweldemo.adapters.Day1Adapter
 import com.example.laxiweldemo.adapters.Day2Adapter
+import com.example.laxiweldemo.adapters.OngoingAdapter
 import com.example.laxiweldemo.dtos.Day2DTO
 import com.example.laxiweldemo.dtos.EventsDTOArraylist
 import com.google.gson.Gson
@@ -20,13 +21,6 @@ import java.io.IOException
 import java.nio.charset.Charset
 
 class FragmentDay2 : Fragment() {
-
-    var day2EventsList = arrayListOf(
-        Day2DTO(09.00, "Nukkad Natak" ,"Ug Floor hello boys how are you sab majema"),
-        Day2DTO(09.00, "Nukkad Natak and footloose and streetplay" ,"Ug Floor hello boys how are you"),
-        Day2DTO(09.00, "Nukkad Natak" ,"Ug Floor"),
-        Day2DTO(09.00, "Nukkad Natak" ,"Ug Floor")
-    )
 
     companion object {
         fun newInstance(): FragmentDay2 =
@@ -49,8 +43,9 @@ class FragmentDay2 : Fragment() {
         val gson = Gson()
         GsonBuilder().setPrettyPrinting().create()
         val eventsList: EventsDTOArraylist =  gson.fromJson(jsonstr, EventsDTOArraylist::class.java)
-        super.onViewCreated(view, savedInstanceState)
 
+        val adapter = Day2Adapter(eventsList.EventsList)
+        adapter.setHasStableIds(true)
         day2_recycler_view.apply {
 
             // set a LinearLayoutManager to handle Android RecyclerView behavior

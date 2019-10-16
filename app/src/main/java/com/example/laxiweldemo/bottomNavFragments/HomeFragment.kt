@@ -20,15 +20,15 @@ class HomeFragment: Fragment(){
 
 
     var pronitesList = arrayListOf(
-        PronitesDTO(R.drawable.pronites_baba),
-        PronitesDTO(R.drawable.pronites_baba),
-        PronitesDTO(R.drawable.pronites_baba)
+        PronitesDTO(R.drawable.salim_2),
+        PronitesDTO(R.drawable.nautiyal_2)
+//        PronitesDTO(R.drawable.jubin_nautiyal)
     )
 
     var majorAttractionList = arrayListOf(
-        MajorAtrractionDTO(R.drawable.major_att),
-        MajorAtrractionDTO(R.drawable.major_att),
-        MajorAtrractionDTO(R.drawable.major_att)
+        MajorAtrractionDTO(R.drawable.amandeep_2),
+        MajorAtrractionDTO(R.drawable.punjabi_sardar_4),
+        MajorAtrractionDTO(R.drawable.movie_screen_5)
     )
 
 

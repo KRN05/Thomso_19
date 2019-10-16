@@ -7,20 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.laxiweldemo.MySharedPreference
 import com.example.laxiweldemo.R
 import com.example.laxiweldemo.adapters.Day1Adapter
-import com.example.laxiweldemo.adapters.WorkshopsAdapter
-import com.example.laxiweldemo.dtos.Day1DTO
 import com.example.laxiweldemo.dtos.EventsDTOArraylist
-import com.example.laxiweldemo.dtos.TeamDTOArrayList
-import com.example.laxiweldemo.dtos.WorkshopsDTO
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.events_day1.*
-import kotlinx.android.synthetic.main.fragment_workshops.view.*
-import kotlinx.android.synthetic.main.fragment_workshops.workshops_recycler_view
 import java.io.IOException
 import java.nio.charset.Charset
+
 
 class FragmentDay1 : Fragment() {
 
@@ -39,12 +35,27 @@ class FragmentDay1 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val jsonstr : String? = loadJSONFromAsset()
+        val sharedpreferences = context?.let { MySharedPreference(it) }
+
+        //this loads data to shared preference
+        loadJSONFromAsset()?.let { sharedpreferences?.setEventsData(it) }
+
+
+        val jsonstr : String? = sharedpreferences?.getEventsData()
         Log.d("Json String",jsonstr)
         val gson = Gson()
         GsonBuilder().setPrettyPrinting().create()
         val eventsList: EventsDTOArraylist =  gson.fromJson(jsonstr, EventsDTOArraylist::class.java)
 
+        /*
+                adapter.setHasStableIds(true) will keep the ids stable on their position otherwise
+                they move randomly on your scroll
+
+                getItemId and getItemViewType are it's parts
+         */
+
+        val adapter = Day1Adapter(eventsList.EventsList)
+        adapter.setHasStableIds(true)
         day1_recycler_view.apply {
 
             // set a LinearLayoutManager to handle Android RecyclerView behavior

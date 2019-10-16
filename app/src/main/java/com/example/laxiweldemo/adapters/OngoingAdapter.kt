@@ -1,20 +1,17 @@
 package com.example.laxiweldemo.adapters
 
-import android.os.Build
+
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laxiweldemo.dtos.EventsDTO
 import com.example.laxiweldemo.viewHolders.OngoingViewHolder
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import kotlin.collections.ArrayList
-import android.content.Intent
-import kotlinx.android.synthetic.main.events_ongoing_list.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class OngoingAdapter(
@@ -22,23 +19,45 @@ class OngoingAdapter(
 ) :
     RecyclerView.Adapter<OngoingViewHolder>() {
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    val current = LocalDateTime.now()
-    @RequiresApi(Build.VERSION_CODES.O)
-    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
-    @RequiresApi(Build.VERSION_CODES.O)
-    val formatted = current.format(formatter)
+   // val mActivity: Context = context
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
-    @RequiresApi(Build.VERSION_CODES.O)
-    val timeFormatted = current.format(timeFormatter)
+    fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
+        val formatter = SimpleDateFormat(format, locale)
+        return formatter.format(this)
+    }
 
+    fun getCurrentDateTime(): Date {
+        return Calendar.getInstance().time
+    }
 
-    private val parts: String = formatted.split(" ").toString()
-    val mDate = formatted.substring(0, formatted.indexOf(' '))
+    private fun checkTimeRange(s1: String, s2: String): Boolean {
 
-    val day1 = "14/10/2019"
+        val simpleDateFormat = SimpleDateFormat("HH:mm")
+
+        val date1: Date = simpleDateFormat.parse(s1)
+
+        val date2: Date = simpleDateFormat.parse(s2)
+
+        val d = Date()
+
+        val s3 = simpleDateFormat.format(d)
+
+        val date3 = simpleDateFormat.parse(s3)
+
+        return date3 >= date1 && date3 <= date2
+    }
+
+//    fun isNowBetweenDateTime(s: Date, e: Date): Boolean {
+//
+//        s.after()
+//        return date.Interval(s, e).containsNow()
+//    }
+
+    val date = getCurrentDateTime()
+    val currentDate = date.toString("dd/MM/yyyy")
+    val currentTime: String = date.toString("HH:mm")
+
+    val day1 = "18/10/2019"
     val day2 = "19/10/2019"
     val day3 = "20/10/2019"
 
@@ -46,16 +65,20 @@ class OngoingAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OngoingViewHolder {
         val inflater = LayoutInflater.from(parent.context)
 
-        Log.d("hst", timeFormatted)
-
+        Log.d("ongoingeve", currentTime)
         return OngoingViewHolder(inflater, parent)
-
     }
 
     /*
     get a size of whole data list
      */
-    override fun getItemCount(): Int = eventsday1.size
+    override fun getItemCount(): Int {
+        if (eventsday1.size == 0) {
+            return 0
+        } else {
+            return eventsday1.size
+        }
+    }
 
 
     override fun onBindViewHolder(holder: OngoingViewHolder, position: Int) {
@@ -63,59 +86,47 @@ class OngoingAdapter(
         val events: EventsDTO = eventsday1[position]
         holder.bind(events)
 
-        holder.itemView.event_venue_0.setOnClickListener(View.OnClickListener {
 
-        })
+//        val boolday = checkCurrentTimeIsBetweenGivenString(day1 +events.start_time, day1 +events)
+//        Log.d("ongoingeveha", boolday.toString())
 
+        if (currentDate.compareTo(day1) == 0) {
 
-        if (mDate.compareTo(day1) == 0) {
-            if (events.event_day == "day1") {
+            if (events.event_day == "day1" && checkTimeRange(events.start_time, events.end_time)) {
                 holder.itemView.visibility = View.VISIBLE
-
-                /*
-                event onclick listener
-                 */
-                holder.itemView.setOnClickListener {
-                    Log.d("oclick", "onClick: clicked on: ")
-
-                }
 
             } else {
                 holder.itemView.layoutParams = LinearLayout.LayoutParams(0, 0)
             }
 
-            OngoingAdapter(eventsday1).notifyItemRemoved(position)
 
-        } else if (mDate.compareTo(day2) == 0) {
-            if (events.event_day == "day2") {
+        } else if (currentDate.compareTo(day2) == 0) {
+            if (events.event_day == "day2" && checkTimeRange(events.start_time, events.end_time)) {
                 holder.itemView.visibility = View.VISIBLE
             } else {
                 holder.itemView.layoutParams = LinearLayout.LayoutParams(0, 0)
             }
-            OngoingAdapter(eventsday1).notifyItemRemoved(position)
-
-        } else if (mDate.compareTo(day3) == 0) {
-            if (events.event_day == "day3") {
+        } else if (currentDate.compareTo(day3) == 0) {
+            if (events.event_day == "day3" && checkTimeRange(events.start_time, events.end_time)) {
                 holder.itemView.visibility = View.VISIBLE
             } else {
                 holder.itemView.layoutParams = LinearLayout.LayoutParams(0, 0)
             }
-
-            OngoingAdapter(eventsday1).notifyItemRemoved(position)
         } else {
+            holder.itemView.layoutParams = LinearLayout.LayoutParams(0, 0)
             // set ongoing visibility false
+            //     holder.itemView.ongoing_recycler_view.visibility = View.GONE
+            //  holder.itemView.ongoing_visibility.text="NO ONGOING EVENT"
+           // val intent = Intent(mActivity, FragmentOnGoing::class.java)
         }
 
     }
 
-    fun intentDetails(intent: Intent, events: EventsDTO, position: Int) {
-        intent.putExtra("event_name", events.event_name.get(position))
-        intent.putExtra("event_des", events.description.get(position))
-        intent.putExtra("event_start", events.start_time.get(position))
-        intent.putExtra("event_end", events.end_time.get(position))
-        intent.putExtra("event_cod", events.coordinator.get(position))
-        intent.putExtra("event_cod_no", events.contact.get(position))
-        intent.putExtra("event_location", events.event_location.get(position))
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
 }

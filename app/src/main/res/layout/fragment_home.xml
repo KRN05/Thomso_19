@@ -9,7 +9,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/main_background"
             android:orientation="vertical"
-            android:layout_weight="100">
+            android:weightSum="100">
 
         <TextView
                 android:id="@+id/textView4"
@@ -18,7 +18,6 @@
                 android:layout_marginTop="24dp"
                 android:paddingStart="18dp"
                 android:text="PRONITES"
-                android:layout_weight="10"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -27,17 +26,14 @@
                 android:id="@+id/pronites_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="40"
                 android:orientation="horizontal" />
 
         <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:paddingStart="18sp"
-                android:layout_weight="10"
+                android:layout_marginTop="@dimen/margin18"
                 android:text="MAJOR ATTRACTIONS"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
@@ -46,7 +42,6 @@
                 android:id="@+id/majorAttractions_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="40"
                 android:layout_marginTop="30dp" />
 
     </LinearLayout>

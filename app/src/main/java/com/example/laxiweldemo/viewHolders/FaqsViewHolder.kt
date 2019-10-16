@@ -13,7 +13,7 @@ class FaqsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.list_faq, parent, false)) {
 
     private var faqTitle: TextView? = null
-    private var faqDescription: ReadMoreTextView? = null
+    private var faqDescription: TextView? = null
 
 
     init {

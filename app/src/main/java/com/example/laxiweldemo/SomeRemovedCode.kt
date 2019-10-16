@@ -121,3 +121,46 @@ Fragment Transaction -- for fragment transaction, that allows you to use intent 
 //            else -> super.onOptionsItemSelected(item)
 //        }
 //    }
+
+
+//@RequiresApi(Build.VERSION_CODES.O)
+//val current = LocalDateTime.now()
+//@RequiresApi(Build.VERSION_CODES.O)
+//val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
+//@RequiresApi(Build.VERSION_CODES.O)
+//val formatted = current.format(formatter)
+//
+//@RequiresApi(Build.VERSION_CODES.O)
+//val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
+//@RequiresApi(Build.VERSION_CODES.O)
+//val timeFormatted = current.format(timeFormatter)
+//
+//
+//private val parts: String = formatted.split(" ").toString()
+//val mDate = formatted.substring(0, formatted.indexOf(' '))
+
+
+//map permission
+//*/
+//
+//fun checkPermissionMap(eventLocation: String) {
+//    if (ContextCompat.checkSelfPermission(
+//            EventOverview(),
+//            Manifest.permission.ACCESS_FINE_LOCATION
+//        )
+//        != PackageManager.PERMISSION_GRANTED
+//    ) {
+//
+//        ActivityCompat.requestPermissions(
+//            EventOverview(),
+//            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+//            40
+//        )
+//
+//        // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+//        // app-defined int constant. The callback method gets the
+//        // result of the request.
+//    } else {
+//        locationGo(eventCodNo)
+//    }
+

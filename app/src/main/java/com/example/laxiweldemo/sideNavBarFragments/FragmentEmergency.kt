@@ -10,13 +10,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.example.laxiweldemo.R
-import kotlinx.android.synthetic.main.fragment_emergency.*
+import kotlinx.android.synthetic.main.fragment_emergency_2.*
 
 class FragmentEmergency : Fragment() {
 
@@ -31,7 +29,7 @@ class FragmentEmergency : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_emergency, container, false)
+        val view = inflater.inflate(R.layout.fragment_emergency_2, container, false)
 
 
         val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)

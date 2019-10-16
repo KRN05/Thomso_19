@@ -42,6 +42,8 @@ class Day2ViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             intent.putExtra("event_cod", mEvents.coordinator)
             intent.putExtra("event_cod_no", mEvents.contact)
             intent.putExtra("event_location", mEvents.event_location)
+            intent.putExtra("event_lat", mEvents.lat)
+            intent.putExtra("event_long", mEvents.long)
             itemView.context.startActivity(intent)
         }
     }

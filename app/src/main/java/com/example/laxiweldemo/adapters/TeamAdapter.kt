@@ -16,22 +16,23 @@ class TeamAdapter(
 
     val xyz = arrayListOf<Int>(
         R.drawable.rohit,
-        R.drawable.harshit,
-        R.drawable.rana,
-        R.drawable.ayush,
-        R.drawable.manu,
-        R.drawable.pulkit,
+        R.drawable.harshit_2,
+        R.drawable.rana_2,
+        R.drawable.ayush_2,
+        R.drawable.manu_2,
+        R.drawable.pulkit_2,
         R.drawable.tanishq,
-        R.drawable.shakshay,
-        R.drawable.rupali,
-        R.drawable.abdulahad,
-        R.drawable.jivesh,
-        R.drawable.abhay,
-        R.drawable.vivek,
+        R.drawable.saakshya_2,
+        R.drawable.rupali_2,
+        R.drawable.abdul_2,
+        R.drawable.jivesh_2,
+        R.drawable.abhay_2,
+        R.drawable.vivek_2,
         R.drawable.satyam,
-        R.drawable.mayan,
+        R.drawable.nikhil_2,
+        R.drawable.mayan_2,
         R.drawable.shreyansh,
-        R.drawable.harsh
+        R.drawable.harsh_2
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {

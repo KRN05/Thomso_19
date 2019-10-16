@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 import com.example.laxiweldemo.R;
@@ -229,11 +228,11 @@ public class MapsFragment extends FragmentActivity implements OnMapReadyCallback
         List<MarkerValue> placeList = new ArrayList<>();
         int iconDrawable = 0;
         switch (v.getId()) {
-            case R.id.fab_arc_menu_1:
+            case R.id.cod_no:
                 placeList = eventList;
                 iconDrawable = R.drawable.ic_stars;
                 break;
-            case R.id.fab_arc_menu_2:
+            case R.id.event_ov_location:
                 placeList = eateriesList;
                 iconDrawable = R.drawable.ic_action_restaurant;
                 break;

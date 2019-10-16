@@ -9,5 +9,7 @@ class EventsDTO(
     val coordinator: String,
     val contact: String,
     val description : String,
-    val rulebook_link: String
+    val rulebook_link: String,
+    val lat :String,
+    val long : String
 )
