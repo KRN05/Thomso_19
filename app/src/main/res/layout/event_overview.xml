@@ -124,7 +124,6 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="10dp"
-            android:onClick="openGoogleMaps"
             android:src="@android:drawable/ic_dialog_map"
             app:backgroundTint="#01579B" />
 

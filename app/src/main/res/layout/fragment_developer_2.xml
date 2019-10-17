@@ -12,11 +12,11 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/my_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="117dp"
+            android:layout_height="122dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:src="@drawable/krn_2" />
+            android:src="@drawable/krn_3" />
 
     <TextView
             android:id="@+id/textView"

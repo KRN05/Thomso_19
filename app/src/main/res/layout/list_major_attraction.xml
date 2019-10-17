@@ -6,10 +6,10 @@
 
     <ImageView
             android:id="@+id/majorAttractions"
-            android:layout_width="196dp"
-            android:layout_height="134dp"
-            android:layout_marginEnd="@dimen/margin18"
+            android:layout_width="248dp"
+            android:layout_height="193dp"
             android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/margin18"
             android:layout_marginBottom="20dp"
             app:srcCompat="@drawable/major_att" />
 </LinearLayout>

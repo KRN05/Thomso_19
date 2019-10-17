@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <com.example.laxiweldemo.NonSwipeableViewPager
+            <com.thomso19here.laxiweldemo.NonSwipeableViewPager
                     android:id="@+id/viewpager_dashboard"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

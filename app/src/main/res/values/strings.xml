@@ -20,9 +20,9 @@
     </string>
 
 
-    <string name="securityMale">SECURITY (m)\nAnshu Singh</string>
+    <string name="securityMale">SECURITY\nAnshu Singh</string>
 
-    <string name="securityFemale">SECURITY (f)\nVedanti Khokher</string>
+    <string name="securityFemale">SECURITY\nManu Garg</string>
 
     <string-array name="dashboardTabsNames">
         <item>CARNIVAL</item>
@@ -42,5 +42,6 @@
     <string name="eventLocation">Location:  %1$s</string>
     <string name="no_event">NO ONGOING EVENT</string>
 
+    <string name="mapString">geo:0,0?q=%1$s</string>
 
 </resources>

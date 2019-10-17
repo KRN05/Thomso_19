@@ -156,7 +156,7 @@ fi
 
 # Escape application args
 save () {
-    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
+    for i do printf %s\n"$i" | sed "s/'/'\n\n''/g;1s/^/'/;\$s/\$/' \n\n/" ; done
     echo " "
 }
 APP_ARGS=$(save "$@")

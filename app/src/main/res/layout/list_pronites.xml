@@ -9,7 +9,7 @@
     <ImageView
             android:id="@+id/pronites_card"
             android:layout_width="250dp"
-            android:layout_height="290dp"
-            app:srcCompat="@drawable/salimsulaiman2" />
+            android:layout_height="330dp"
+            app:srcCompat="@drawable/jubin_yes_1" />
 
 </LinearLayout>

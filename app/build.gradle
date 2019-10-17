@@ -8,7 +8,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.laxiweldemo"
+        applicationId "com.thomso19here.laxiweldemo"
         minSdkVersion 20
         targetSdkVersion 28
         versionCode 1
@@ -18,7 +18,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+//            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -31,7 +31,6 @@ android {
     androidExtensions {
         experimental = true
     }
-
 }
 
 dependencies {
@@ -82,6 +81,4 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 
     implementation 'com.ms-square:expandableTextView:0.1.4'
-
-
 }
